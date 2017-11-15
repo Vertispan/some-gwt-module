@@ -74,8 +74,17 @@ anything using the old, GWT-2-only methods, and once ready to release, publish t
 library (with a version < 1.0). Then, remove all of these deprecated methods,
 and publish a newer version, without the dependency on gwt, or the old objects.
 
+If your chosen module is something which is likely to evolve, and must depend on GWT 2 features,
+consider using a gwt2 classifier for your deprecated artifact.  While it is not pretty,
+you can use maven profiles and build-helper-maven-plugin to have two separate source folders
+for types that must have deprecated GWT 2 references.  This will produce two artifacts when you build,
+and prevent any version skew or need for manual changes to keep supporting users who are still using GWT 2
+(currently everyone).  While we all want to use GWT 3 as soon as possible, making breaking changes for GWT 2
+users will just reduce the number of people who can or will upgrade, and the more people we have using
+and testing the new version, the better!
+
 # Publish
-Once you are in a stable state, let the community know so they can take a look! Of course, you can
+Once you are in a stable state, let the community know so we can take a look! Of course, you can
 just publish your sources somewhere like GitHub, but you can also push to a maven repository so
 developers can download your work easily in their maven or gradle projects. The simple pom.xml
 included in this project has the basics of how to push it to Sonatype's repository, but you will also
