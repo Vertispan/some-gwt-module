@@ -81,7 +81,7 @@ for types that must have deprecated GWT 2 references.  This will produce two art
 and prevent any version skew or need for manual changes to keep supporting users who are still using GWT 2
 (currently everyone).  While we all want to use GWT 3 as soon as possible, making breaking changes for GWT 2
 users will just reduce the number of people who can or will upgrade, and the more people we have using
-and testing the new version, the better!
+and testing the new, transitional versions of these modules, the better!
 
 # Publish
 Once you are in a stable state, let the community know so we can take a look! Of course, you can
