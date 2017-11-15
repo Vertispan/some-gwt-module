@@ -54,9 +54,9 @@ calls. At your discretion, you might consider deprecating those static factory m
 * Start replacing simple JSNI methods either with plain Java, calling private native methods, or 
 with just a native jsinterop method. Hopefully many of these cases will be obvious, and should
 make the code more readable as you work. Again, don't be afraid to ask for help as you get started.
-* Replace JSNI methods.  Where possible, use plain java by creating JsInterop types and methods
-to be able to call into javascript.  While it is possible to add native javascript in J2CL, this new
-`native.js` cannot call back into java, and should be considered a last resort. Hopefully most of
+* **(James' rewrite of above paragraph:)** Replace JSNI methods.  Where possible, use plain java by creating JsInterop types and methods
+to be able to call into javascript.  While it is possible to add native javascript in J2CL, the new
+`native.js` strategy cannot call back into java, and should be considered a last resort. Hopefully most of
 the removal of JSNI should be straighforward, obvious, and make the code more readable as you work.
 Again, don't be afraid to ask for help or code review as you get started.
 * Rewrite any required generators into annotation processors, or other reusable generator tools.
