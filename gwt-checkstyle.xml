@@ -139,7 +139,7 @@ Description:
         <module name="Regexp">
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="newline before }"/>
             <property name="severity" value="error"/>
-            <property name="format" value="[\r]?[\n][ \t]*[\r]?[\n][ \t]+[}][ ]*[\n]"/>
+            <property name="format" value="[\r]?[\n][ \t]*[\r]?[\n][ \t]+[}][ ]*[\r]?[\n]"/>
             <property name="message" value="newline before }"/>
             <property name="illegalPattern" value="true"/>
         </module>
