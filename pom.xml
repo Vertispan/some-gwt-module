@@ -13,6 +13,12 @@
   <description>The purpose of this module, what it provides and how it can be used</description>
   <url>https://github.com/vertispan/some-gwt-module</url>
 
+  <inceptionYear>2018</inceptionYear>
+  <organization>
+    <name>The GWT Authors</name>
+    <url>https://github.com/gwtproject</url>
+  </organization>
+
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -22,10 +28,9 @@
 
   <developers>
     <developer>
-      <name>Your Name Here</name>
-      <email>...</email>
-      <organization>...</organization>
-      <organizationUrl>...</organizationUrl>
+      <name>The GWT Authors</name>
+      <organization>The GWT Project Authors</organization>
+      <url>https://github.com/gwtproject</url>
     </developer>
   </developers>
 
@@ -66,33 +71,50 @@
           <target>${maven.compiler.target}</target>
         </configuration>
       </plugin>
-
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.17</version>
+        <groupId>com.coveo</groupId>
+        <artifactId>fmt-maven-plugin</artifactId>
+        <version>2.5.1</version>
         <executions>
           <execution>
-            <id>validate</id>
-            <phase>validate</phase>
-            <configuration>
-              <encoding>UTF-8</encoding>
-              <consoleOutput>true</consoleOutput>
-              <failsOnError>true</failsOnError>
-              <configLocation>gwt-checkstyle.xml</configLocation>
-            </configuration>
             <goals>
               <goal>check</goal>
             </goals>
           </execution>
         </executions>
-        <dependencies>
-          <dependency>
-            <groupId>com.puppycrawl.tools</groupId>
-            <artifactId>checkstyle</artifactId>
-            <version>8.8</version>
-          </dependency>
-        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <header>LICENSE.header</header>
+          <encoding>UTF-8</encoding>
+          <skipExistingHeaders>true</skipExistingHeaders>
+          <mapping>
+            <java>SLASHSTAR_STYLE</java>
+          </mapping>
+          <excludes>
+            <exclude>**/README.md</exclude>
+            <exclude>**/LICENSE</exclude>
+            <exclude>**/LICENSE.header</exclude>
+            <exclude>**/AUTHORS</exclude>
+            <exclude>**/*.xml</exclude>
+            <exclude>src/test/resources/**</exclude>
+            <exclude>src/main/resources/**</exclude>
+          </excludes>
+          <properties>
+            <year>${project.inceptionYear}</year>
+            <name>${project.organization.name}</name>
+          </properties>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>
